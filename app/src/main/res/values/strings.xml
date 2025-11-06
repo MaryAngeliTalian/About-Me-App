@@ -1,5 +1,21 @@
 <resources>
     <string name="app_name">aboutme</string>
-    <string name="name">" Joshua San Jose T. Madroño"</string>
+
+    <string name="name">Joshua San Jose T. Madroño</string>
+
     <string name="yellow_star">Yellow star</string>
+
+    <string name="long_info_about_me">
+        Hello! My name is Joshua San Jose T. Madroño and this is my About Me page created in Android Studio.
+        I am currently learning how to use layouts such as ScrollView, LinearLayout, and TextView.
+        This is for my Mobile Applications Development class or ITCC 41 section B.
+
+        I enjoy programming, designing apps, and learning new things about technology especially with Maam Guen!
+        In the very near future, I want to build more Android applications with interactive features to have a successful career like Maam Guen.
+
+        If I was a dinosaur, I will rawrrrrrrrrrrrr always!! Hehe
+        If I go back 3 years ago, I would still pick me!
+
+        Thank you for very much!
+    </string>
 </resources>
