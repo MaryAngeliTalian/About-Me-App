@@ -1,76 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?>
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
+}
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+android {
+    namespace = "com.example.android.aboutme"
+    compileSdk = 36
 
-    <ScrollView
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+    buildFeatures {
+        compose = true
+        dataBinding = true // Move dataBinding configuration here
+    }
 
-    <LinearLayout
-        android:id="@+id/padding"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="@dimen/layout_margin"
-        android:paddingTop="@dimen/small_padding">
+    defaultConfig {
+        applicationId = "com.example.android.aboutme"
+        minSdk = 34
+        targetSdk = 36
+        versionCode = 1
+        versionName = "1.0"
 
-        <TextView
-            android:id="@+id/name_text"
-            style="@style/NameStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/name"
-            android:textAlignment="center" />
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
 
-        <ImageView
-            android:id="@+id/start_image"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/layout_margin"
-            android:contentDescription="@string/yellow_star"
-            android:src="@android:drawable/btn_star_big_on" />
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+    buildFeatures {
+        compose = true
+        dataBinding = true
+    }
+}
 
-        <TextView
-            android:id="@+id/about_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/long_info_about_me"
-            android:lineSpacingMultiplier="1.2"
-            android:padding="16dp"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:layout_marginTop="16dp" />
+dependencies {
 
-        <EditText
-            android:id="@+id/nickname_edit"
-            style="@style/NameStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter your nickname"
-            android:layout_marginTop="16dp" />
-
-        <Button
-            android:id="@+id/done_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Done"
-            android:layout_marginTop="8dp" />
-
-        <TextView
-            android:id="@+id/nickname_text"
-            style="@style/NameStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp"
-            android:visibility="gone" />
-
-
-    </LinearLayout>
-
-</ScrollView>
-
-</layout>
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.activity.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.material3)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.ui.test.junit4)
+    debugImplementation(libs.androidx.ui.tooling)
+    debugImplementation(libs.androidx.ui.test.manifest)
+}
