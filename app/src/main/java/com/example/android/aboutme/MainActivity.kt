@@ -25,11 +25,11 @@ class MainActivity : ComponentActivity() {
     private fun addNickname(view: View) {
 
         binding.apply {
-            binding.nicknameText.text = binding.nicknameEdit.text
+            myName?.nickname = nicknameEdit.text.toString()
             invalidateAll()
-            binding.nicknameEdit.visibility = View.GONE
-            binding.doneButton.visibility = View.GONE
-            binding.nicknameText.visibility = View.VISIBLE
+            nicknameEdit.visibility = View.GONE
+            doneButton.visibility = View.GONE
+            nicknameText.visibility = View.VISIBLE
         }
 
         val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
