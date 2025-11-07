@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- First style -->
     <style name="NameStyle">
         <item name="android:layout_marginTop">@dimen/layout_margin</item>
         <item name="android:fontFamily">@font/roboto</item>
@@ -8,4 +9,15 @@
         <item name="android:textColor">#000000</item>
         <item name="android:textSize">20sp</item>
     </style>
+
+    <!-- Second style -->
+    <style name="AboutMeNameStyle">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/box_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@android:color/holo_green_light</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
 </resources>
