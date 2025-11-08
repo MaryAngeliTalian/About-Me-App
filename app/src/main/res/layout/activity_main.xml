@@ -30,11 +30,13 @@
                 android:id="@+id/padding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/layout_margin"
                 android:orientation="vertical"
-                android:paddingTop="@dimen/small_padding">
+                android:paddingTop="@dimen/small_padding"
+                android:background="#AAFFFFFF"
+                android:layout_marginTop="@dimen/layout_margin">
 
-                <TextView
+
+            <TextView
                     android:id="@+id/AboutMename_text"
                     style="@style/AboutMeNameStyle"
                     android:layout_width="match_parent"
