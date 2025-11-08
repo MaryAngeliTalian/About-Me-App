@@ -9,76 +9,85 @@
             type="com.example.android.aboutme.MyName" />
     </data>
 
-    <ScrollView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="16dp"
         tools:context=".MainActivity">
 
-        <LinearLayout
-            android:id="@+id/padding"
+        <!-- ang GIF nga background -->
+        <ImageView
+            android:id="@+id/gifBackground"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/layout_margin"
-            android:orientation="vertical"
-            android:paddingTop="@dimen/small_padding">
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
 
-            <TextView
-                android:id="@+id/AboutMename_text"
-                style="@style/AboutMeNameStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="About Me!!!"
-                android:layout_margin="@dimen/layout_margin"
-                android:textAlignment="center" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp">
 
-            <ImageView
-                android:id="@+id/start_image"
+            <LinearLayout
+                android:id="@+id/padding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/layout_margin"
-                android:contentDescription="@string/yellow_star"
-                android:src="@android:drawable/btn_star_big_on" />
+                android:orientation="vertical"
+                android:paddingTop="@dimen/small_padding">
 
-            <TextView
-                android:id="@+id/about_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:lineSpacingMultiplier="1.2"
-                android:padding="16dp"
-                android:text="@string/long_info_about_me"
-                android:textColor="#000000"
-                android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/AboutMename_text"
+                    style="@style/AboutMeNameStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/layout_margin"
+                    android:text="About Me!!!"
+                    android:textAlignment="center" />
 
-            <EditText
-                android:id="@+id/nickname_edit"
-                style="@style/NameStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:hint="Enter your nickname"
-                android:text="@={myName.nickname}" />
+                <ImageView
+                    android:id="@+id/start_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_margin"
+                    android:contentDescription="@string/yellow_star"
+                    android:src="@android:drawable/btn_star_big_on" />
 
-            <Button
-                android:id="@+id/done_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Done" />
+                <TextView
+                    android:id="@+id/about_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:lineSpacingMultiplier="1.2"
+                    android:padding="16dp"
+                    android:text="@string/long_info_about_me"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/nickname_text"
-                style="@style/NameStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@{myName.nickname}"
-                android:textSize="18sp"
-                android:visibility="gone" />
+                <EditText
+                    android:id="@+id/nickname_edit"
+                    style="@style/NameStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="Enter your nickname"
+                    android:text="@={myName.nickname}" />
 
+                <Button
+                    android:id="@+id/done_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Done" />
 
-        </LinearLayout>
-    </ScrollView>
-
+                <TextView
+                    android:id="@+id/nickname_text"
+                    style="@style/NameStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@{myName.nickname}"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
 </layout>
